@@ -1,0 +1,15 @@
+dlib
+Jinja2
+jupyter
+keras
+opencv-python
+scikit-learn
+scipy
+https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.12.0-py3-none-any.whl
+tensorflow-tensorboard==1.5.1
+matplotlib
+flask
+pyaudio
+
+
+brew install portaudio
