@@ -1,13 +1,13 @@
 import cv2
 import time
 
-video_capture = cv2.VideoCapture(0)
 
-while True:
-    time.sleep(1)
-    # Capture frame-by-frame
-    ret, frame = video_capture.read()
-    cv2.imwrite('static/captured_image.png', frame)
+class Camera():
 
-video_capture.release()
-cv2.destroyAllWindows()
+    @staticmethod
+    def get_frame():
+        _, frame = cv2.VideoCapture(0).read()
+        small_image = cv2.resize(frame, (0,0), fx=0.3, fy=0.3)
+        cv2.VideoCapture(0).release()
+        cv2.destroyAllWindows()
+        return cv2.imencode('.jpg', small_image)[1].tobytes()
